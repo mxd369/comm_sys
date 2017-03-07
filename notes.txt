@@ -1,2 +1,159 @@
-difference between
-'get' and 'post'
+================'get' vs 'post'
+difference between 'get' and 'post'
+
+-------------'doGet'
+
+form:				  		       User.java
+	name:           -> request  -> servlet
+
+	display output <- response <- 
+
+	
+-------------'doPost'
+
+<form action="User" method="POST">
+...
+</form>
+
+protected void doPost(HttpServletRequest request,
+HttpsServletResponse response) throws ServletException, IOException {
+
+...
+out.println(request.getParmeter("firstName"));
+
+}
+
+
+http://localhost:8080/comm_sys/User?firstName=Mo&lastName=Ko
+
+form:				  		       User.java
+	name:           -> request  -> servlet
+					   headers
+					   body
+
+form data is passed in the body of HTTP request message
+
+-------------
+GET (non-sensitive data)
+  *Good for debugging
+  *Bookmark or email URL
+  *Limitations on data length
+
+POST (sensitive data)
+  *Can't bookmark or email URL
+  *No limitations on data length
+  *Can also send binary data
+
+-------------
+================Java JDBC MYSQl
+-------------Development Process
+1. Add MySQL database driver to classpath
+2. Get connection
+3. Submit SQL query
+4. Process result set
+
+
+
+Oracle Documentation:
+	1. Establishing a connection.
+	2. Create a statement.
+	3. Execute the query.
+	4. Process the ResultSet object.
+	5. Close the connection.
+
+-------------Insert and display
+package theServlet;
+
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Connection;
+
+public class Driver {
+
+	// get a connection
+	public static void main(String[] args) {
+		
+		String url = "jdbc:mysql://localhost:3306/demo";
+		String user = "root";
+		String password = "BKnFOSEL";
+		
+		try {
+			// 1. Establishing a connection.
+			Connection con = DriverManager.getConnection(url, user, password);
+
+			// 2. Create a statement.
+			Statement stmt = con.createStatement();
+
+			// 3. Execute the query.
+			/*
+			String sql = "INSERT INTO employees "
+						+ "(last_name, first_name, email)"
+						+ " values ('Brown', 'David', 'david.brown@foo.com')";
+			*/
+			
+			//stmt.executeUpdate(sql);//this will execute the code against the database
+			
+			String sql = "delete from employees where last_name='Brown'";
+			int rowsAffected = stmt.executeUpdate(sql);
+			
+			ResultSet rs = stmt.executeQuery("select * from employees");
+
+			// 4. Process the ResultSet object.
+			while (rs.next()) {
+				System.out.println(rs.getString("last_name") + ", " + rs.getString("first_name"));
+			}
+
+			System.out.println("Task Complete.");
+			
+			// 5. Close the connection.
+			
+		}
+		catch (Exception exc) {
+			exc.printStackTrace();
+		}
+	}
+	
+}
+-------------
+-------------Prepared Statements
+What are Prepared Statements
+Create a Prepared Statement
+Setting Parameter Values
+Executing a Prepared Statement
+Reusing a Prepared Statement
+
+A Prepared Statment is a precompiled SQL statement
+
+Prepared Statements provide the following benefits:
+	Makes it easier to set SQL parameter values
+	Prevent against SQL dependency injection attacks
+	May improve application performance
+	  SQL statement is precompiled
+
+using parameter values
+	select * from employees
+	where salary > 8000 and department='Legal'
+
+set Parameter placeholders
+  - Use a question mark for placehold: ?
+    select * from employees
+    where salary > ? and department=?
+    
+---Create the prepared statement
+PreparedStatement myStmt = myConn.prepareStatement("select * from employees" + " where salary > ? and department=?");
+
+Set parameter values for type and position
+  - Parameter positions are 1 based, left-to-right
+  myStmt.setDouble(1, 80000);
+  myStmt.setString(2, "Legal");
+
+  // now execute the query
+  ResultSet myRs = myStmt.executeQuery();
+
+
+
+
+-------------Calling MySQL Stored Procedures with Java
+
+
