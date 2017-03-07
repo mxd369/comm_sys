@@ -160,5 +160,19 @@ Set parameter values for type and position
 
 
 -------------Calling MySQL Stored Procedures with Java
+-------------JDBC ResultSet MetaData with MySQL
+Retrieve the metadata instance
+  ResultSetMetaData myRsMetaData = myRs.getMetaData();
 
-
+Same of ResultSetMetaData methods
+  getColumnName()
+  getPrecision()
+  getColumnType()
+  getScale()
+  isNullable()
+  getColumnTypeName()
+  getColumnCount()
+  isCurrency()
+  
+Google: javadoc jdbc resultset metadata
+https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSetMetaData.html
