@@ -1,3 +1,8 @@
+================salting and hashing
+
+PREVIOUS STORY
+Java MD5 Hashing & Salting: Secure Your Passwords
+
 ================'get' vs 'post'
 difference between 'get' and 'post'
 
