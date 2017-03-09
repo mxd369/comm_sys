@@ -176,3 +176,11 @@ Same of ResultSetMetaData methods
   
 Google: javadoc jdbc resultset metadata
 https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSetMetaData.html
+-------------ResultSet VS PreparedStatement
+ResultSet holds the results that come back from a Select Query.
+PreparedStatement is and advanced Statement.
+Statements are used to execute the queries(INSERT,UPDATE,DELETE,SELECT).
+The results of the select are held by the RESULTSET. 
+
+
+PreparedStatement precompiles the sql query improving the performance.
