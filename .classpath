@@ -15,5 +15,24 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.41-bin.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/freemarker.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/css/bootstrap.css"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/css/bootstrap.min.css"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/css/mdb.css"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/css/mdb.min.css"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/css/style.css"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/sass/mdb/free/_animations.scss"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/sass/mdb/free/_buttons.scss"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/sass/mdb/free/_cards-basic.scss"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/sass/mdb/free/_carousels-basic.scss"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/sass/mdb/free/_footer.scss"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/sass/mdb/free/_forms-basic.scss"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/sass/mdb/free/_global.scss"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/sass/mdb/free/_helpers.scss"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/sass/mdb/free/_hover-effects.scss"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/sass/mdb/free/_navbars.scss"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/sass/mdb/free/_roboto.scss"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/sass/mdb/free/_typography.scss"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/sass/mdb/free/_waves.scss"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/sass/mdb/mdb.scss"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

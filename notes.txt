@@ -184,3 +184,5 @@ The results of the select are held by the RESULTSET.
 
 
 PreparedStatement precompiles the sql query improving the performance.
+
+-------------conditional database queries java
